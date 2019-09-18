@@ -2,40 +2,32 @@
 ///new hw repo
 
 ///hw #4
-const inventors = [
-    { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
-    { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
-    { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
-    { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
-    { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
-    { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
-    { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
-    { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
-    { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
-    { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
-    { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
-    { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
-  ];
+//global
+var a = 1;
+let b = 2;
+const c = 3;
 
+/*
+function test() {
+    var a = 4;
+    let b = 5;
+    const c = 6;
+    console.log('funct scope: ', a, b, c);
+}
+*/
 
-    // Array.prototype.filter()
-    // 1. Filter the list of inventors for those who were born in the 1500's, use console.table to display the results
+/*
+if (1) {
+    //block scope
+    var a = 4;
+    let b = 5;
+    const c = 6;
+    console.log('block/if scope: ', a, b, c);
+}
+*/
 
-   function filter(inventors.year){
-      return inventors.year > 1500;
-   }
- 
+for (var a = 0; a < 10; a++) {
+    console.log(`loop: ${a}`)
+}
 
-
-    // Array.prototype.map()
-    // 2. Give us an array of the inventor first and last names
-    //console.table the results
-   
- 
-
-   
-
-
-
-
-
+console.log('global scope: ', a, b, c);
