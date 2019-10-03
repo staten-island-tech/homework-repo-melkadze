@@ -2,3 +2,13 @@ body{
     background-color: powderblue;
     font-size: 3vh;
 }
+
+.jump span{
+    display: inline-block;
+}
+
+.jump span:hover{
+    transition: transform 20s;
+    transform: scale(20);
+    color: peachpuff;
+}

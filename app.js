@@ -4,6 +4,7 @@
 
 
 ///code for cool html console logging (thank you stack overflow)
+
 (function () {
     var old = console.log;
     var logger = document.getElementById('log');
@@ -195,3 +196,27 @@ val = Math.random();
 val = Math.floor(Math.random() * 20 + 1);
 
 //console.log(val);
+
+
+
+///hw #7
+const featured = ['deep', 'pepper', 'hawaiian'];
+const specialty = ['meaty', 'spicy', 'marge'];
+
+const pizzas = [...featured, 'veg', ...specialty];
+const fridayPizzas = [...pizzas];
+//console.log(pizzas);
+
+const deepDish = {
+    pizzaName: 'deep',
+    size: 'large',
+    ingredients: ['mariana', 'saucegg', 'dough', 'cheese']
+};
+
+const heading = document.querySelector('.jump');
+
+heading.innerHTML = sparanWrap(heading.textContent);
+
+function sparanWrap(word) {
+    return [...word].map(letter => `<span>${letter}</span>`).join('');
+}
