@@ -21,6 +21,7 @@
 
 
 
+
 ///hw #1
 //console.log(`today is ${day}`);
 
@@ -28,6 +29,8 @@
 let x = Boolean('false');
 console.log(x);
 */
+
+/*
 
 let x = '';
 
@@ -93,12 +96,11 @@ switch(new Date().getDay()){
 }
 
 
-
 ///hw #3
 function greet(firstName = 'John', lastName = 'Doe'){
     /* if(typeof firstName === 'undefined'){firstName = 'John'}
     if(typeof lastName === 'undefined'){lastName = 'Doe'}
-    console.log('hello'); */
+    console.log('hello'); */ /*
     return 'Hello ' + firstName + ' ' + lastName;
 }
 //console.log(greet());
@@ -113,6 +115,7 @@ const square = function(x=3){
     console.log('iifed');
 })();
 */
+/*
 
 (function(name) {
     //console.log(`hey there ${name}`);
@@ -162,6 +165,7 @@ if (1) {
 }
 */
 
+/*
 for (var a = 0; a < 10; a++) {
     //console.log(`loop: ${a}`);
 }
@@ -220,3 +224,55 @@ heading.innerHTML = sparanWrap(heading.textContent);
 function sparanWrap(word) {
     return [...word].map(letter => `<span>${letter}</span>`).join('');
 }
+*/
+
+
+
+///hw #8
+const alphabet = ['A', 'B', 'C', 'D', 'E', 'F'];
+const numbers = ['1', '2', '3', '4', '5', '6'];
+
+//const a = alphabet[0];
+//const a = alphabet[1];
+const [a,, c, ...rest] = alphabet;
+
+const newArray = [...alphabet, ...numbers];
+
+console.log(newArray);
+
+function sumAndMultiply(a, b) {
+    return [a+b, a*b, a/b];
+}
+
+const [sum, multiply, division = 'No division'] = sumAndMultiply(2,3);
+
+console.log(sum);
+console.log(multiply);
+console.log(division);
+
+
+const personOne = {
+    name: 'Sally',
+    age: 32,
+    food: 'melon',
+    somethingElse: 3
+}
+
+const personTwo = {
+    name: 'P2'
+}
+
+const {name: name2, age, food = 'Rice', ...rest2} = personOne;
+const personThree = {...personOne, ...personTwo};
+
+function printUser({name, age, food = 'Rice'}) {
+    console.log(`Name is ${name}. Age is ${age}. Food is ${food}`);
+}
+
+printUser(personOne);
+
+console.log(personThree);
+console.log(name2);
+console.log(age);
+console.log(food);
+console.log(rest2);
