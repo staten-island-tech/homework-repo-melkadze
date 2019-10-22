@@ -5,6 +5,7 @@
 
 ///code for cool html console logging (thank you stack overflow)
 
+/*
 (function () {
     var old = console.log;
     var logger = document.getElementById('log');
@@ -19,7 +20,7 @@
     }
 })();
 
-
+*/
 
 
 ///hw #1
@@ -224,7 +225,6 @@ heading.innerHTML = sparanWrap(heading.textContent);
 function sparanWrap(word) {
     return [...word].map(letter => `<span>${letter}</span>`).join('');
 }
-*/
 
 
 
@@ -276,3 +276,29 @@ console.log(name2);
 console.log(age);
 console.log(food);
 console.log(rest2);
+*/
+
+
+
+//hw #9
+async function go() {
+    const p1 = fetch('https://api.github.com/users/melkadze');
+    const p2 = fetch('https://api.github.com/users/whalensiths');
+
+    //wait for both
+    const response = await Promise.all([p1, p2]);
+    const dataPromises = response.map(r => r.json());
+    const [first, second] = await Promise.all(dataPromises);
+    console.log(first, second);
+}
+
+go();
+
+
+async function getData(names){
+    const promises = names.map(names => fetch(`https://api.github.com/users/${names}`).then(r => r.json()));
+    const people = await Promise.all(promises);
+    console.log(people);
+}
+
+getData(['melkadze', 'whalensiths']);
